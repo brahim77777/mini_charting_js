@@ -6,12 +6,23 @@
 	height : 200px;
 }
 
+.bg{
+	background-image : url("svg/first.svg");
+}
+<--! hello world thi 
+
+
+-->
 #a{
 	border : 2px solid black;
 	background-color: red;
 	width: 40px;
 	text-align: center;
 	padding-bottom : 100px;
+}
+#canvas{
+	
+	background-image : url('svg/first.svg');
 }
 
 #b {
@@ -27,3 +38,21 @@
 	width: 40px;
 	padding-bottom : 80px;
 }
+.square{
+	width: 400px;
+	height : 400px;
+	background-color :gray;
+}
+#background{
+	width: 400px;
+	height : 400px;
+	background-color :rgb(255,255,180,0.5);
+}
+.v{
+	transform : rotate(90deg);
+}
+
+
+
+
+
