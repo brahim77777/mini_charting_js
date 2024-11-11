@@ -12,7 +12,12 @@
 
 	<script>
 		let data  = [10,20,8,11 ,12,13,50, 70]
-		let canvas_size = Math.max(...data)*10
+		let canvas_size = 400
+		let max_bar = Math.max(...data)
+		// max_bar ==> 90%
+		function getHeight(value){
+			return Math.round( (value*90)/max_bar )
+		}
 		let canvas = document.querySelector("#canvas")
 		let description = "Hours Played by different Ages:"
 
@@ -20,12 +25,13 @@
 		// Setting up the container canvas
 
 		canvas.style.display = "flex"
-		canvas.style.height = canvas_size+"px"
+		canvas.style.height = "400px"
 		canvas.style.justifyContent = 'space-between'
 		canvas.style.alignItems = 'flex-end'
 		canvas.style.marginLeft = 'auto'
 		canvas.style.backgroundColor = 'white'
 		canvas.style.height = canvas_size+"px"	
+		canvas.style.border = "4px solid black"
 		// setting the description column
 				
 		let desc = document.createElement("span")
@@ -34,13 +40,19 @@
 
 
 
-	
+			
 		data.map( (ele , index)=>{
 			const bar  = document.createElement('span')	
+
+			// 
+			bar.style.position = 'relative'
+			bar.style.height = getHeight(ele)+'%'
+			//
 			bar.style.backgroundColor = colorsList[index]
 			bar.style.textAlign = 'center'
 			bar.style.width = '40px'
-			bar.style.paddingBottom = ele*10+'px'
+			//bar.style.paddingBottom = '10%'
+			//padding_bottom = ele*100 / canvas_size
 			
 
 	
