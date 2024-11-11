@@ -1,0 +1,73 @@
+<html>
+	<head>
+		
+		<title >Charts</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>Chart:</h1>	
+
+<div id="canvas">
+</div>
+
+	<script>
+		let data  = [10,20,8,11 ,12,13,50, 70]
+		let canvas_size = Math.max(...data)*10
+		let canvas = document.querySelector("#canvas")
+		let description = "Hours Played by different Ages:"
+
+		let colorsList = ['cyan', 'orange','pink','red','blue','orange','pink', 'purple','chocolate']
+		// Setting up the container canvas
+
+		canvas.style.display = "flex"
+		canvas.style.height = canvas_size+"px"
+		canvas.style.justifyContent = 'space-between'
+		canvas.style.alignItems = 'flex-end'
+		canvas.style.marginLeft = 'auto'
+		canvas.style.backgroundColor = 'white'
+		canvas.style.height = canvas_size+"px"	
+		// setting the description column
+				
+		let desc = document.createElement("span")
+		desc.textContent = description
+		canvas.appendChild(desc)
+
+
+
+	
+		data.map( (ele , index)=>{
+			const bar  = document.createElement('span')	
+			bar.style.backgroundColor = colorsList[index]
+			bar.style.textAlign = 'center'
+			bar.style.width = '40px'
+			bar.style.paddingBottom = ele*10+'px'
+			
+
+	
+			canvas.appendChild(bar)
+		})	
+	</script>
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
